@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PetsCoursera</string>
+
+    <string name="hintPetName">Rasputia</string>
+    <string name="Counter">0</string>
+    <string name="imvDescription">TODO</string>
+    <string name="top5Star">top 5 pets</string>
+</resources>

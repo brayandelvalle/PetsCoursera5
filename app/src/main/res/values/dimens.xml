@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="MarginBottom">10dp</dimen>
+    <dimen name="MarginTop">5dp</dimen>
+    <dimen name="CardViewRadius">6dp</dimen>
+    <dimen name="Padding">4dp</dimen>
+    <dimen name="MarginLeft">7dp</dimen>
+    <dimen name="MarginRight">7dp</dimen>
+    <dimen name="MarginRightYellowBone">20dp</dimen>
+    <dimen name="LetterSize">25sp</dimen>
+    <dimen name="ElevationActionBar">4dp</dimen>
+
+</resources>

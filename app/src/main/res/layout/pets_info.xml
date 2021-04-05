@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This is the layout that will be recycled to build the cardviews -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvPets"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/Padding"
+    card_view:cardCornerRadius="@dimen/CardViewRadius"
+    card_view:cardBackgroundColor="@color/AccentColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/Padding">
+        <ImageView
+            android:id="@+id/imvCardView"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:src="@drawable/rasputia"
+            android:padding="@dimen/Padding"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/imvDescription"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/Padding"
+            android:layout_below="@id/imvCardView">
+
+
+            <ImageButton
+                android:id="@+id/ibtBone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imvDescription"
+                android:background="@drawable/icons8_dog_bone_100"/>
+
+            <TextView
+                android:id="@+id/tvPetName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hintPetName"
+                android:textSize="@dimen/LetterSize"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/ibtBone"
+                android:layout_toEndOf="@id/ibtBone"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/imvYellowBone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imvDescription"
+                android:src="@drawable/icons8_dog_bone_100_yellow"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/MarginRight"
+                android:paddingEnd="@dimen/MarginRightYellowBone"
+                android:paddingLeft="@dimen/MarginLeft"
+                android:paddingStart="@dimen/MarginLeft" />
+
+            <TextView
+                android:id="@+id/tvCounter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Counter"
+                android:textSize="@dimen/LetterSize"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tvPetName"
+                android:layout_toEndOf="@id/tvPetName"
+                android:textAlignment="textEnd"
+                android:gravity="end"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

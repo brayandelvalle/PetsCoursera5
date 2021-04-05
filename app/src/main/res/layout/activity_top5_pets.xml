@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+    <include
+        android:id="@+id/MyActionBar2"
+        layout="@layout/toolbar"
+        >
+    </include>
+    -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/MyActionBar2"
+        android:background="@color/ColorPrimary"
+        android:layout_marginBottom="@dimen/Padding"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
+        />
+
+    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPetName"
+        android:layout_margin="@dimen/Padding"
+        android:text="@string/imvDescription"
+        android:textColor="@color/black"
+        android:textSize="@dimen/LetterSize"
+        android:textStyle="bold"
+        android:layout_below="@id/MyActionBar2"/>
+        -->
+
+    Recyclerview with the pets
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPets2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MyActionBar2"
+        android:paddingLeft="@dimen/MarginLeft"
+        android:paddingStart="@dimen/MarginLeft"
+        android:paddingRight="@dimen/MarginRight"
+        android:paddingEnd="@dimen/MarginRight">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
