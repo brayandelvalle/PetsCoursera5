@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PerfilFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="@dimen/cirIvWidth"
+            android:layout_height="@dimen/cirIvHeigh"
+            android:src="@drawable/rasputia"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/MarginTop"
+            app:civ_border_color="@color/AccentColor"
+            app:civ_border_width="@dimen/borderWith"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="@dimen/shadowRadius"
+            app:civ_shadow_color="@color/black"
+            android:scaleType="centerCrop"
+            android:background="@color/white"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hintPetName"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:textSize="@dimen/LetterSize"
+            android:layout_marginBottom="@dimen/MarginBottom"
+            />
+
+        <!-- TODO: Update blank fragment layout -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPetsPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/MarginTop"
+            android:paddingLeft="@dimen/fragPerfilPaddingLeft"
+            android:paddingStart="@dimen/fragPerfilPaddingLeft"
+            android:paddingRight="@dimen/fragPerfilPaddingRight"
+            android:paddingEnd="@dimen/fragPerfilPaddingRight"
+            android:layout_gravity="center_horizontal"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

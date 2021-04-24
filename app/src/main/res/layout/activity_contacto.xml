@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    tools:context=".activities.Contacto">
+
+    <TextView
+        android:id="@+id/tvContactMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ContactTitle"
+        android:textSize="@dimen/BigLetterSize"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:paddingLeft="@dimen/MarginLeftRightBio"
+        android:paddingStart="@dimen/MarginLeftRightBio"
+        android:paddingRight="@dimen/MarginLeftRightBio"
+        android:layout_marginBottom="@dimen/MarginBottom"
+         />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintName"
+
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:counterMaxLength="30"
+
+        android:layout_marginLeft="@dimen/MarginRightContact"
+        android:layout_marginStart="@dimen/MarginRightContact"
+        android:layout_marginRight="@dimen/MarginLeftContact"
+        android:layout_marginEnd="@dimen/MarginLeftContact"
+
+        app:boxCornerRadiusTopStart="@dimen/leftRadius"
+        app:boxCornerRadiusTopEnd="@dimen/rightRadius"
+        app:boxCornerRadiusBottomStart="@dimen/leftRadius"
+        app:boxCornerRadiusBottomEnd="@dimen/rightRadius">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintEmail"
+
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:counterMaxLength="30"
+
+        android:layout_marginLeft="@dimen/MarginRightContact"
+        android:layout_marginStart="@dimen/MarginRightContact"
+        android:layout_marginRight="@dimen/MarginLeftContact"
+        android:layout_marginEnd="@dimen/MarginLeftContact"
+
+        app:boxCornerRadiusTopStart="@dimen/leftRadius"
+        app:boxCornerRadiusTopEnd="@dimen/rightRadius"
+        app:boxCornerRadiusBottomStart="@dimen/leftRadius"
+        app:boxCornerRadiusBottomEnd="@dimen/rightRadius">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContactMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintComment"
+
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:counterMaxLength="200"
+
+        android:layout_marginLeft="@dimen/MarginRightContact"
+        android:layout_marginStart="@dimen/MarginRightContact"
+        android:layout_marginRight="@dimen/MarginLeftContact"
+        android:layout_marginEnd="@dimen/MarginLeftContact"
+
+        app:boxCornerRadiusTopStart="@dimen/leftRadius"
+        app:boxCornerRadiusTopEnd="@dimen/rightRadius"
+        app:boxCornerRadiusBottomStart="@dimen/leftRadius"
+        app:boxCornerRadiusBottomEnd="@dimen/rightRadius">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContactComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSendComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sendComment"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+
+        />
+
+</LinearLayout>

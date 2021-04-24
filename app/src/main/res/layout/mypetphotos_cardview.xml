@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvPetsPhotos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/Padding"
+    card_view:cardCornerRadius="@dimen/CardViewRadius2"
+    card_view:cardBackgroundColor="@color/AccentColor"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/imvCardView2"
+            android:layout_width="@dimen/cvMyPetWidth"
+            android:layout_height="@dimen/cvMyPetHeigh"
+            android:src="@drawable/rasputia"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/imvDescription"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tvCounter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Counter"
+                android:textSize="@dimen/LetterSize"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/MarginRight"
+                android:paddingEnd="@dimen/MarginRightYellowBone"
+                android:paddingLeft="@dimen/MarginLeft"
+                android:paddingStart="@dimen/MarginLeft" />
+            <ImageButton
+                android:id="@+id/imvYellowBone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icons8_dog_bone_100_yellow"
+                android:contentDescription="@string/imvDescription" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    tools:context=".activities.Acercade">
+
+    <TextView
+        android:id="@+id/tvAcercadeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/acercadeTitle"
+        android:textSize="@dimen/BigLetterSize"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/MarginLeftRightBio"
+        android:paddingStart="@dimen/MarginLeftRightBio"
+        android:paddingRight="@dimen/MarginLeftRightBio"/>
+
+    <TextView
+        android:id="@+id/tvAcercadeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acercadeBioName"
+        android:textSize="@dimen/LetterSize"
+        android:textStyle="normal"
+        android:paddingLeft="@dimen/MarginLeftRightBio"
+        android:paddingStart="@dimen/MarginLeftRightBio"
+        android:paddingRight="@dimen/MarginLeftRightBio"
+        android:paddingBottom="@dimen/MarginBottom" />
+
+    <TextView
+        android:id="@+id/tvAcercadeDescrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acercadeBioDescrip"
+        android:textSize="@dimen/LetterSize"
+        android:textStyle="normal"
+        android:paddingLeft="@dimen/MarginLeftRightBio"
+        android:paddingStart="@dimen/MarginLeftRightBio"
+        android:paddingRight="@dimen/MarginLeftRightBio"
+        android:paddingBottom="@dimen/MarginBottom" />
+
+    <TextView
+        android:id="@+id/tvAcercadeLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/acercadeBioLoc"
+        android:textSize="@dimen/LetterSize"
+        android:textStyle="normal"
+        android:paddingLeft="@dimen/MarginLeftRightBio"
+        android:paddingStart="@dimen/MarginLeftRightBio"
+        android:paddingRight="@dimen/MarginLeftRightBio"
+        android:paddingBottom="@dimen/MarginBottom" />
+
+</LinearLayout>

@@ -2,12 +2,38 @@
 <resources>
     <dimen name="MarginBottom">10dp</dimen>
     <dimen name="MarginTop">5dp</dimen>
+
     <dimen name="CardViewRadius">6dp</dimen>
+    <dimen name="CardViewRadius2">10dp</dimen>
+    <dimen name="leftRadius">20dp</dimen>
+    <dimen name="rightRadius">20dp</dimen>
+
     <dimen name="Padding">4dp</dimen>
     <dimen name="MarginLeft">7dp</dimen>
     <dimen name="MarginRight">7dp</dimen>
+
+    <dimen name="MarginLeftContact">20dp</dimen>
+    <dimen name="MarginRightContact">20dp</dimen>
+
     <dimen name="MarginRightYellowBone">20dp</dimen>
+    <dimen name="MarginLeftRightBio">23dp</dimen>
     <dimen name="LetterSize">25sp</dimen>
+    <dimen name="BigLetterSize">35sp</dimen>
     <dimen name="ElevationActionBar">4dp</dimen>
+
+    <!--dimens for the circular imageview-->
+    <dimen name="cirIvWidth">130dp</dimen>
+    <dimen name="cirIvHeigh">130dp</dimen>
+    <dimen name="shadowRadius">4dp</dimen>
+    <dimen name="borderWith">2dp</dimen>
+
+    <!--dimens for the perfil fragment-->
+    <dimen name="fragPerfilPaddingLeft">17dp</dimen>
+    <dimen name="fragPerfilPaddingRight">15dp</dimen>
+
+    <!--dimens for mypet cardview -->
+    <dimen name="cvMyPetWidth">125dp</dimen>
+    <dimen name="cvMyPetHeigh">100dp</dimen>
+
 
 </resources>

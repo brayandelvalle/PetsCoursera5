@@ -6,7 +6,7 @@
     android:id="@+id/cvPets"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/Padding"
+    android:layout_marginBottom="@dimen/MarginBottom"
     card_view:cardCornerRadius="@dimen/CardViewRadius"
     card_view:cardBackgroundColor="@color/AccentColor">
 
@@ -14,13 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/Padding">
+        >
         <ImageView
             android:id="@+id/imvCardView"
             android:layout_width="match_parent"
             android:layout_height="222dp"
             android:src="@drawable/rasputia"
-            android:padding="@dimen/Padding"
             android:scaleType="centerCrop"
             android:contentDescription="@string/imvDescription"/>
 
@@ -28,9 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="@dimen/Padding"
+            android:paddingLeft="@dimen/MarginLeft"
+            android:paddingStart="@dimen/MarginLeft"
+            android:paddingRight="@dimen/MarginRight"
+            android:paddingEnd="@dimen/MarginRight"
             android:layout_below="@id/imvCardView">
-
 
             <ImageButton
                 android:id="@+id/ibtBone"

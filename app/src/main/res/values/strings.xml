@@ -5,4 +5,20 @@
     <string name="Counter">0</string>
     <string name="imvDescription">TODO</string>
     <string name="top5Star">top 5 pets</string>
+
+    <string name="acercadeTitle">Desarrollador</string>
+    <string name="acercadeBioName">Brayan del Valle</string>
+    <string name="acercadeBioDescrip"> Estudiante de Android Studio en Coursera y astromono</string>
+    <string name="acercadeBioLoc"> Más información 2357111317</string>
+
+    <string name="ContactTitle">Información de tu mensaje</string>
+    <string name="hintName">Nombre</string>
+    <string name="hintEmail">example@holi.com</string>
+    <string name="hintComment">¡Déja tu comentario acá!</string>
+    <string name="sendComment">¡Enviar comenterio!</string>
+
+    <string name="menuOptContact">Contacto</string>
+    <string name="menuOptAbout">Acerca de</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

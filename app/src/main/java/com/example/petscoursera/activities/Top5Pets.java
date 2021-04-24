@@ -1,4 +1,4 @@
-package com.example.petscoursera;
+package com.example.petscoursera.activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,9 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+
+import com.example.petscoursera.R;
+import com.example.petscoursera.adapters.petsAdapter;
+import com.example.petscoursera.pojos.petsArrays;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.petscoursera">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,18 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PetsCoursera">
+        <activity android:name=".activities.Contacto" />
+        <activity android:name=".activities.Acercade" />
 
-        <!--This adds the back  navegation button to go from Top5Pets to MainActivity-->
-        <activity android:name=".Top5Pets"
-            android:parentActivityName=".MainActivity">
+        <!-- This adds the back  navegation button to go from Top5Pets to MainActivity -->
+        <activity
+            android:name=".activities.Top5Pets"
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
-        </activity>
-        <!--__________________________________________________-->
-
-        <activity android:name=".MainActivity">
+                android:value=".activities.MainActivity" />
+        </activity> <!-- __________________________________________________ -->
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

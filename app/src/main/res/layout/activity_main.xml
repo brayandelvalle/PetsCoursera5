@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <!--Here we are including the personalized action bar-->
     <!--
@@ -14,7 +14,6 @@
         layout="@layout/toolbar">
     </include>
     -->
-    
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -24,19 +23,39 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
         />
-    
-    <!--Recyclerview with the pets -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPets"
+
+    <!--Designing the appbar -->
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/MyActionBar1"
-        android:paddingLeft="@dimen/MarginLeft"
-        android:paddingStart="@dimen/MarginLeft"
-        android:paddingRight="@dimen/MarginRight"
-        android:paddingEnd="@dimen/MarginRight">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <!--The toolbar that will have the fragments-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </androidx.appcompat.widget.Toolbar>
+
+        <!--tabs for the fragment-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--Here we add the viewpager-->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </androidx.viewpager.widget.ViewPager>
 
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

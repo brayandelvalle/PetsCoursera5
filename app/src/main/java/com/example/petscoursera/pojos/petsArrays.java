@@ -1,6 +1,4 @@
-package com.example.petscoursera;
-
-import java.util.Collections;
+package com.example.petscoursera.pojos;
 
 public class petsArrays implements Comparable<petsArrays>{
     private String petName;
