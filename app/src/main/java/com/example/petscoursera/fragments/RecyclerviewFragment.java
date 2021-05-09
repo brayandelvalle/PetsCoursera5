@@ -21,8 +21,11 @@ import com.example.petscoursera.activities.Acercade;
 import com.example.petscoursera.activities.Contacto;
 import com.example.petscoursera.R;
 import com.example.petscoursera.activities.Top5Pets;
-import com.example.petscoursera.adapters.petsAdapter;
-import com.example.petscoursera.pojos.petsArrays;
+import com.example.petscoursera.adapters.PetsAdapter;
+import com.example.petscoursera.db.PetsConstructor;
+import com.example.petscoursera.pojos.PetsArrays;
+import com.example.petscoursera.presenters.IRecyclerviewFragmentPresenter;
+import com.example.petscoursera.presenters.RecyclerviewFragmentPresenter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,13 +34,16 @@ import java.util.Collections;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class RecyclerviewFragment extends Fragment {
+public class RecyclerviewFragment extends Fragment implements IRecyclerviewFragment {
 
     //Object "petsArray"
-    ArrayList<petsArrays> petsInfoArrayList;
+    ArrayList<PetsArrays> petsInfoArrayList;
 
     //Recyclerview
     RecyclerView PetsList;
+
+    //Presenter
+    IRecyclerviewFragmentPresenter presenter;
 
     // Required empty public constructor
     public RecyclerviewFragment() { }
@@ -54,19 +60,12 @@ public class RecyclerviewFragment extends Fragment {
         //RecyclerView
         //----------------------------------------------------------------------------------------------//
         //Declaring the recyclerview object
-        PetsList = (RecyclerView) v.findViewById(R.id.rvPets);
+        PetsList = v.findViewById(R.id.rvPets);
 
-        //Now we decide how we want to show the list of pets; linear, grid, staggered
-        //We are going to use a LinearLayoutManager
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        PetsList.setLayoutManager(llm);
+        //Presenter
+        //----------------------------------------------------------------------------------------------//
+        presenter = new RecyclerviewFragmentPresenter(this, getContext());
 
-        //Initializing the list of mythical pets
-        InitializePetsList();
-
-        //Initializating the adapter
-        InitializePetsAdapter();
 
         return v;
     }
@@ -84,11 +83,17 @@ public class RecyclerviewFragment extends Fragment {
         int id = item.getItemId();
         //Star button
         if(id==R.id.btTop5){
+            //Toast.makeText(getContext(), "Hollaaaaa", Toast.LENGTH_SHORT).show();
             //Sorting the pets by their likes
             //We first create a new petArrays ArrayList with the same information that has petsInfoArrayList but that will be sorted.
-            ArrayList<petsArrays>petsInfoArrayListSort;
+            ArrayList<PetsArrays> petsInfoArrayListSort;
             petsInfoArrayListSort = new ArrayList<>();
-            for(int pos=0; pos<petsInfoArrayList.size(); ++pos ){petsInfoArrayListSort.add(new petsArrays(
+
+
+            //this line may bring back the data from the constructor
+            PetsConstructor petsConstructor = new PetsConstructor(getContext());
+            petsInfoArrayList = petsConstructor.obtainData();
+            for(int pos=0; pos<5; ++pos ){petsInfoArrayListSort.add(new PetsArrays(
                     petsInfoArrayList.get(pos).getPetName(),
                     petsInfoArrayList.get(pos).getPetLikes(),
                     petsInfoArrayList.get(pos).getPetPhoto() ));}
@@ -127,24 +132,24 @@ public class RecyclerviewFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    //This method will initialize to petsAdapter.
+    //This methods will initialize to petsAdapter.
     //It creates an object of petsAdapter, gives it the list of pets petsInfoArrayList so petsAdapter can use it.
     //The adapter calls the layout with the cardview pets_info
     //-------------------------------------------------------------------------------------------------------------------//
-    private void InitializePetsAdapter(){
-        petsAdapter adapter = new petsAdapter(petsInfoArrayList, getActivity());
-        PetsList.setAdapter(adapter);}
+    @Override
+    public void generateLinearLayoutRV() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        PetsList.setLayoutManager(llm);
+    }
 
-    //Method to initialize the list of pets.
-    //-------------------------------------------------------------------------------------------------------------------//
-    public void InitializePetsList(){
-        //ArrayList with the name, likes and photo of each pet.
-        petsInfoArrayList = new ArrayList<>();
-        petsInfoArrayList.add(new petsArrays("Rasputia", 0, R.drawable.rasputia));
-        petsInfoArrayList.add(new petsArrays("Kraken",   0, R.drawable.kraken));
-        petsInfoArrayList.add(new petsArrays("Cerbero",  0, R.drawable.cerbero));
-        petsInfoArrayList.add(new petsArrays("Unicornio",0, R.drawable.unicornio));
-        petsInfoArrayList.add(new petsArrays("Grifo",    0, R.drawable.grifo));
-        petsInfoArrayList.add(new petsArrays("Hidra",    0, R.drawable.hidra)); }
+    @Override
+    public PetsAdapter buildAdapter(ArrayList<PetsArrays> petsArrays) {
+        return new PetsAdapter(petsArrays, getActivity());
+    }
 
+    @Override
+    public void InitializeAdapterRV(PetsAdapter adapter) {
+        PetsList.setAdapter(adapter);
+    }
 }

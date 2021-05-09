@@ -10,21 +10,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petscoursera.R;
-import com.example.petscoursera.pojos.petsArrays;
+import com.example.petscoursera.db.PetsConstructor;
+import com.example.petscoursera.pojos.PetsArrays;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class petsAdapter extends RecyclerView.Adapter<petsAdapter.petsViewHolder> {
+public class PetsAdapter extends RecyclerView.Adapter<PetsAdapter.petsViewHolder> {
     //This list contains the petArrays objects that will use the adapter
-    ArrayList<petsArrays> petsArraysList;
+    ArrayList<PetsArrays> petsArraysList;
     Activity activity1;
 
     //-----------------------------------------------------------------------------------------------------------//
     //the constructor for petsAdapter
-    public petsAdapter(ArrayList<petsArrays> petsArraysList, Activity activity1){
+    public PetsAdapter(ArrayList<PetsArrays> petsArraysList, Activity activity1){
         this.petsArraysList = petsArraysList;
         this.activity1 = activity1;
     }
@@ -47,12 +48,13 @@ public class petsAdapter extends RecyclerView.Adapter<petsAdapter.petsViewHolder
     //Here we pass the list of pets petsArraysList to the views "imvCardView", "ibtBone"...
     //So, here we are setting/associating the elements to the views.
     public void onBindViewHolder(@NonNull petsViewHolder holder, int position) {
-        petsArrays pets = petsArraysList.get(position);
+        PetsArrays pets = petsArraysList.get(position);
         holder.imvCardView.setImageResource(pets.getPetPhoto());
         holder.tvPetName.setText(pets.getPetName());
         holder.tvCounter.setText(NumberToString(pets.getPetLikes()));
 
         //This method counts the number of likes for each pet
+        /*
         holder.ibtBone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +62,19 @@ public class petsAdapter extends RecyclerView.Adapter<petsAdapter.petsViewHolder
                 pets.setPetLikes(likes);
                 holder.tvCounter.setText(NumberToString(likes));
             }
+        });*/
+
+        ////This method counts the number of likes for each pet but using the SQLite database (giving persistence to the app)
+        holder.ibtBone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Inserting one like
+                PetsConstructor petsConstructor = new PetsConstructor(activity1);
+                petsConstructor.giveLikeToPet(pets);
+                holder.tvCounter.setText(NumberToString(petsConstructor.obtainLikes(pets)));
+            }
         });
+
 
         //Pet info in a Toast when touching the pet photo
         holder.imvCardView.setOnClickListener(v -> {
@@ -89,10 +103,10 @@ public class petsAdapter extends RecyclerView.Adapter<petsAdapter.petsViewHolder
         public petsViewHolder(@NonNull View itemView) {
             super(itemView);
             //Associating the views and the objects:
-            imvCardView = (ImageView) itemView.findViewById(R.id.imvCardView);
-            tvPetName   = (TextView) itemView.findViewById(R.id.tvPetName);
-            tvCounter   = (TextView) itemView.findViewById(R.id.tvCounter);
-            ibtBone     = (ImageButton) itemView.findViewById(R.id.ibtBone);
+            imvCardView = itemView.findViewById(R.id.imvCardView);
+            tvPetName   = itemView.findViewById(R.id.tvPetName);
+            tvCounter   = itemView.findViewById(R.id.tvCounter);
+            ibtBone     = itemView.findViewById(R.id.ibtBone);
 
         }
     }

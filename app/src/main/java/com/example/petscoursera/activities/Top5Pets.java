@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.petscoursera.R;
-import com.example.petscoursera.adapters.petsAdapter;
-import com.example.petscoursera.pojos.petsArrays;
+import com.example.petscoursera.adapters.PetsAdapter;
+import com.example.petscoursera.pojos.PetsArrays;
 
 import java.util.ArrayList;
 
 public class Top5Pets extends AppCompatActivity {
 
-    ArrayList<petsArrays> petsInfoArrayList2;
+    ArrayList<PetsArrays> petsInfoArrayList2;
     RecyclerView PetsList2;
 
     @Override
@@ -27,7 +27,7 @@ public class Top5Pets extends AppCompatActivity {
         //Support for the action bar
         //----------------------------------------------------------------------------------------------//
 
-        Toolbar MyToolbar2 = (Toolbar) findViewById(R.id.MyActionBar2);
+        Toolbar MyToolbar2 = findViewById(R.id.MyActionBar2);
         setSupportActionBar(MyToolbar2);
         ActionBar MyActionBar = getSupportActionBar();
         if(MyActionBar != null){MyActionBar.setDisplayHomeAsUpEnabled(true);}
@@ -39,8 +39,8 @@ public class Top5Pets extends AppCompatActivity {
 
         //Creating the petsArrays object with the top 5 liked pets:
         petsInfoArrayList2 = new ArrayList<>();
-        for (int pos=0; pos<petsNamesTopSort.size()-1; ++pos){
-            petsInfoArrayList2.add(new petsArrays(petsNamesTopSort.get(pos), petsLikesTopSort.get(pos), petNameToIntPhoto(petsNamesTopSort.get(pos)) ));}
+        for (int pos=0; pos<5; ++pos){
+            petsInfoArrayList2.add(new PetsArrays(petsNamesTopSort.get(pos), petsLikesTopSort.get(pos), petNameToIntPhoto(petsNamesTopSort.get(pos)) ));}
 
         /*
         TextView tvProof = (TextView) findViewById(R.id.tvPetName);
@@ -50,7 +50,7 @@ public class Top5Pets extends AppCompatActivity {
 
         //RecyclerView
         //----------------------------------------------------------------------------------------------//
-        PetsList2 = (RecyclerView) findViewById(R.id.rvPets2);
+        PetsList2 = findViewById(R.id.rvPets2);
 
         //Now we decide how we want to show the list of pets; linear, grid, staggered
         //We are going to use a LinearLayoutManager
@@ -78,7 +78,7 @@ public class Top5Pets extends AppCompatActivity {
     //The adapter calls the layout with the cardview pets_info
     //-------------------------------------------------------------------------------------------------------------------//
     private void InitializePetsAdapter2(){
-        petsAdapter adapter = new petsAdapter(petsInfoArrayList2, this);
+        PetsAdapter adapter = new PetsAdapter(petsInfoArrayList2, this);
         PetsList2.setAdapter(adapter);}
 
     // This methods takes the pet name and turns it into its picture

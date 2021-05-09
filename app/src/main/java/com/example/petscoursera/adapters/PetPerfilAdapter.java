@@ -8,20 +8,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.petscoursera.R;
-import com.example.petscoursera.pojos.petsArrays;
+import com.example.petscoursera.pojos.PetsArrays;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class petPerfilAdapter extends RecyclerView.Adapter<petPerfilAdapter.petperfilViewHolder>{
+public class PetPerfilAdapter extends RecyclerView.Adapter<PetPerfilAdapter.petperfilViewHolder>{
 
     //This list contains the petArrays objects that will use the adapter
-    ArrayList<petsArrays> petPerfilArrayList;
+    ArrayList<PetsArrays> petPerfilArrayList;
 
     //Constructor for petPrfilAdapter
-    public petPerfilAdapter(ArrayList<petsArrays> petPerfilArraylist){
+    public PetPerfilAdapter(ArrayList<PetsArrays> petPerfilArraylist){
         this.petPerfilArrayList = petPerfilArraylist;}
 
     @NonNull
@@ -36,7 +36,7 @@ public class petPerfilAdapter extends RecyclerView.Adapter<petPerfilAdapter.petp
 
     @Override
     public void onBindViewHolder(@NonNull petperfilViewHolder holder, int position) {
-        petsArrays petPerfil = petPerfilArrayList.get(position);
+        PetsArrays petPerfil = petPerfilArrayList.get(position);
         holder.imvCardView2.setImageResource(petPerfil.getPetPhoto());
         holder.tvCounter2.setText(NumberToString(petPerfil.getPetLikes()));
 
@@ -65,9 +65,9 @@ public class petPerfilAdapter extends RecyclerView.Adapter<petPerfilAdapter.petp
         //Constructor for petperfilViewHolder
         public petperfilViewHolder(@NonNull View itemView) {
             super(itemView);
-            imvCardView2 = (ImageView) itemView.findViewById(R.id.imvCardView2);
-            tvCounter2   = (TextView)  itemView.findViewById(R.id.tvCounter2);
-            imButton2    = (ImageButton) itemView.findViewById(R.id.imvYellowBone2);
+            imvCardView2 = itemView.findViewById(R.id.imvCardView2);
+            tvCounter2   = itemView.findViewById(R.id.tvCounter2);
+            imButton2    = itemView.findViewById(R.id.imvYellowBone2);
         }
     }
 
